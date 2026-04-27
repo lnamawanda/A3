@@ -1,4 +1,66 @@
 
+/* Font Styles*/ 
+/* archivo-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/archivo-v25-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* archivo-600 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 600;
+  src: url('/fonts/archivo-v25-latin-600.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* archivo-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/fonts/archivo-v25-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* mountains-of-christmas-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Mountains of Christmas';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/fonts/mountains-of-christmas-v24-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+/* mountains-of-christmas-700 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: 'Mountains of Christmas';
+  font-style: normal;
+  font-weight: 700;
+  src: url('/fonts/mountains-of-christmas-v24-latin-700.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+
+
+/* Colours */
+:root {
+    --c-green: hsl(76, 31%, 52%); 
+    --c-white: hsl(0, 0%, 100%); 
+    --c-blue: hsl(226, 20%, 38%); 
+    --c-transparent: tranparent; 
+
+    --color-main-bg: var(--c-green); /* identiy where colour will be use*/
+    --color-text-light: var(--c-white);
+    -color-text-dark: var(--c-blue); 
+    --color-button-primary-bg: var(--c-blue);
+    --color-footer-bg: var(--c-blue);
+    --color-button-secondary-bg: var(--c-transparent);
+    --color-button-secondary-border: var(--c-white);
+    --color-button-secondary-text: var(--c-white);
+}
+
+
 /* CSS Reset*/
 
 *,*::before, *::after {
@@ -9,6 +71,10 @@
     margin: 0; /*cancels out resets that come from browsers*/
 }
 
+body {
+    font-family: "Archivo", Arial, Helvetica, sans-serif ; /* Set Archivo as default font family*/
+}
+
 a {
     text-decoration: none;
 }
@@ -16,4 +82,9 @@ a {
 img, picture, svg {
     max-width: 100%; /* won't get larger than parent when loaded*/
     display: block; /* makes easier to position in layout*/
+}
+
+.wrapper {
+    width: min(calc(100%-48px), cal(1200/16*1rem)); /* rem used for fonts as they do scale up when size changed */
+    margin-inline: auto; /* fix spacing and center within wrapper and make margin on left and right take up all space available */
 }
