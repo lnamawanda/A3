@@ -1,0 +1,19 @@
+
+/* CSS Reset*/
+
+*,*::before, *::after {
+    box-sizing: border-box;
+} /*ensure padding and border don't won't add on top of widht/height set on element */
+
+*{
+    margin: 0; /*cancels out resets that come from browsers*/
+}
+
+a {
+    text-decoration: none;
+}
+
+img, picture, svg {
+    max-width: 100%; /* won't get larger than parent when loaded*/
+    display: block; /* makes easier to position in layout*/
+}
