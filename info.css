@@ -76,7 +76,7 @@ body {
 }
 
 a {
-    text-decoration: none;
+    text-decoration: none; /* removes any prelim settings from browser*/
 }
 
 img, picture, svg {
