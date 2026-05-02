@@ -154,11 +154,11 @@ img, picture, svg {
 }
  @layer component {
 
-
+ /* NAV BAR */ 
   .topnav ul {
   list-style-type: none; /* Removes bullet points */
   margin: 0;
-  padding: 0;
+  padding: 8;
   display: flex; /* Aligns icons horizontally */
   background-color: var(--color-main-bg);
   justify-content: space-around; /* Evenly spaces items */
@@ -177,7 +177,45 @@ img, picture, svg {
   transition: 0.3s;
 }
 
+/* PRODUCT DESIGN*/ 
+#product1{
+  text-align: left;
+}
+ 
+#product1 .pro-container{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding-top: 20px;
+}
 
+#product1 .pro-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+#product1 .pro{
+flex: 1 1 250px; /* grows/shrink/base width*/ 
+max-width: 250px;
+padding: 10px 12px;
+cursor: pointer;
+}
+
+#product1 .pro img {
+  width: 100%;
+  aspect-ratio: 1 / 1;   /* or 4 / 5 for clothing */
+  object-fit: cover;
+}
+#product1 .pro img{
+  width: 100%;
+  border-radius: 20px;
+}
+
+.plusbutton{
+  display: flex;
+  justify-content: space-between;
+}
  }
 
 @layer utility {
