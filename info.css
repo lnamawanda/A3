@@ -1,5 +1,5 @@
 
-@layer global, component, utility /*establishes order of the layers*/ 
+@layer global, component, utility; /*establishes order of the layers*/ 
 
 @layer global {
   /* Downloading Font Styles*/ 
@@ -108,6 +108,7 @@ body {
     line-height: 1.3;
     color: var(--color-text-light);
     background-color: var(--color-main-bg);
+    padding-block-end: 50vh; /*TEMPORARY adds space 50% of viewport height at bottom of bodytag*/
 }
 
 
@@ -152,6 +153,30 @@ img, picture, svg {
 }
 }
  @layer component {
+
+
+  .topnav ul {
+  list-style-type: none; /* Removes bullet points */
+  margin: 0;
+  padding: 0;
+  display: flex; /* Aligns icons horizontally */
+  background-color: var(--color-main-bg);
+  justify-content: space-around; /* Evenly spaces items */
+  position: sticky;
+}
+
+.topnav img {
+  width: 100%; /* Set consistent icon size */
+  height: auto;
+  display: block;
+  padding: 10px; /* Increase clickable area */
+}
+
+.topnav a:hover img {
+  opacity: 0.6; /* Visual feedback on hover */
+  transition: 0.3s;
+}
+
 
  }
 
