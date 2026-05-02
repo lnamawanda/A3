@@ -204,8 +204,11 @@ cursor: pointer;
 
 #product1 .pro img {
   width: 100%;
-  aspect-ratio: 1 / 1;   /* or 4 / 5 for clothing */
-  object-fit: cover;
+  height: 250px;        /* or keep your aspect-ratio */
+  object-fit: contain;  /* shows entire image */
+  background-color: var(--color-main-bg);
+}
+
 }
 #product1 .pro img{
   width: 100%;
@@ -215,8 +218,14 @@ cursor: pointer;
 .plusbutton{
   display: flex;
   justify-content: space-between;
+} /* positions button opposite to price */
+
+.pro-container button{ /* remove box around button and make white*/
+  background-color: transparent;
+  color: var(--c-white);
+  border: none;
 }
- }
+ 
 
 @layer utility {
 
