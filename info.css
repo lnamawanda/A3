@@ -208,13 +208,12 @@ cursor: pointer;
   object-fit: contain;  /* shows entire image */
   background-color: var(--color-main-bg);
 }
-
-}
 #product1 .pro img{
   width: 100%;
   border-radius: 20px;
 }
 
+/* PLUS BUTTON */
 .plusbutton{
   display: flex;
   justify-content: space-between;
@@ -224,8 +223,26 @@ cursor: pointer;
   background-color: transparent;
   color: var(--c-white);
   border: none;
+  font-size: 2rem; /* tried to increase size of button using this*/
+  font-weight: bold;
 }
+
+/* SOCIAL MEDIA FOOTER */
+.socialmedia ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 9;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-around; /* creates even space between each listed item*/
+  background-color: var(--color-footer-bg);
+  b
+}
+
+
  
+}
+
 
 @layer utility {
 
