@@ -51,7 +51,7 @@
     --c-green: hsl(76, 31%, 52%); 
     --c-white: hsl(0, 0%, 100%); 
     --c-blue: hsl(226, 20%, 38%); 
-    --c-transparent: tranparent; 
+    --c-transparent: transparent; 
 
     --color-main-bg: var(--c-green); /* identiy where colour will be use*/
     --color-text-light: var(--c-white);
@@ -67,27 +67,32 @@
 :root{
   --fs-40: calc(40 / 16 * 1rem); 
   --fs-24: calc(24 / 16 * 1rem); 
-  --fs-10: calc( 10 / 16 * 1rem);
+  --fs-16: calc( 16 / 16 * 1rem);
   --fs-14: calc( 14 / 16 * 1rem);
   --fs-12: calc( 12 / 16 * 1rem);
   --fs-8: calc( 8 / 16 * 1rem);
+  --fs-10: calc( 10 / 16 * 1rem);
   --fs-6: calc( 6 / 16 * 1rem);
 
-  --font-size-h1: var(--fs-40); /* brand name on top of nav bar */ 
-  --font-size-p: var(--fs-10); /* additional text or brand information*/ 
-  --font-size-h3: var(--fs-10); /* button size remains the same on both devices */ 
-  --font-size-filter: var(--fs-14); /* font for options on filter bar */ 
-  --font-size-footer: var(--fs-12); /* font for social media options in footer*/ 
-  --font-size-h2: var(--fs-12); /* used for product info*/ 
-}
 
-  @media (min-wdith: 37.5rem){ /*(media acts to overide values)setting breaking point where device view shifts*/
-  :root{ /* redefines the values*/. 
-  --font-size-h1: var(--fs-24);
-  --font-size-p: var(--fs-10);
+ --font-size-h1: var(--fs-24);
+  --font-size-p: var(--fs-8);
   --font-size-filter: var(--fs-8);
   --font-size-footer: var(--fs-6);
-  --font-size-h2: var(--fs-10);
+  --font-size-h2: var(--fs-12);
+  
+}
+
+  @media (min-width: 37.5rem){ /*(media acts to overide values)setting breaking point where device view shifts*/
+  :root{ /* redefines the values*/. 
+ 
+  --font-size-h1: var(--fs-40); /* brand name on top of nav bar */ 
+  --font-size-p: var(--fs-14); /* additional text or brand information*/ 
+  --font-size-h3: var(--fs-12); /* button size remains the same on both devices */ 
+  --font-size-filter: var(--fs-14); /* font for options on filter bar */ 
+  --font-size-footer: var(--fs-12); /* font for social media options in footer*/ 
+  --font-size-h2: var(--fs-16); /* used for product info*/ 
+
     }
   }  
 
@@ -148,7 +153,7 @@ img, picture, svg {
 }
 
 .wrapper {
-    width: min(calc(100%-48px), cal(1200/16*1rem)); /* rem used for fonts as they do scale up when size changed */
+    width: min(calc(100% - 48px), cal(1200 / 16 * 1rem)); /* rem used for fonts as they do scale up when size changed */
     margin-inline: auto; /* fix spacing and center within wrapper and make margin on left and right take up all space available */
 }
 }
@@ -158,10 +163,10 @@ img, picture, svg {
   .topnav ul {
   list-style-type: none; /* Removes bullet points */
   margin: 0;
-  padding: 8;
+  padding: 8px;
   display: flex; /* Aligns icons horizontally */
-  background-color: var(--color-main-bg);
   justify-content: space-around; /* Evenly spaces items */
+  background-color: var(--color-main-bg);
   position: sticky;
 }
 
@@ -182,17 +187,11 @@ img, picture, svg {
   text-align: left;
 }
  
-#product1 .pro-container{
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  padding-top: 20px;
-}
-
 #product1 .pro-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* responsive grid*/
   gap: 20px;
+  padding-top: 20px;
 }
 
 #product1 .pro{
@@ -207,10 +206,25 @@ cursor: pointer;
   height: 250px;        /* or keep your aspect-ratio */
   object-fit: contain;  /* shows entire image */
   background-color: var(--color-main-bg);
-}
-#product1 .pro img{
-  width: 100%;
   border-radius: 20px;
+}
+
+
+
+/* SHOP NOW BUTTON*/
+.shop-button{
+  display: block;
+  margin: 1.25rem auto;
+   flex: 1 1 auto;
+  min-width: 7.5rem;
+}
+
+.hero {
+  display: flex;
+  justify-content:center;
+  gap: clamp(0.5rem, 2vw, 2rem); /* responsive spacing*/ 
+  padding: 0 clamp(0.625rem, 4vw, 3.75rem);
+
 }
 
 /* PLUS BUTTON */
@@ -223,27 +237,93 @@ cursor: pointer;
   background-color: transparent;
   color: var(--c-white);
   border: none;
-  font-size: 2rem; /* tried to increase size of button using this*/
-  font-weight: bold;
+  font-size: 1.5rem; /* tried to increase size of button using this*/
 }
 
 /* SOCIAL MEDIA FOOTER */
 .socialmedia ul{
   list-style-type: none;
   margin: 0;
-  padding: 9;
+  padding: 9px;
   overflow: hidden;
   display: flex;
   justify-content: space-around; /* creates even space between each listed item*/
   background-color: var(--color-footer-bg);
-  b
 }
 
+/* FORM SIGNUP TO MAILING LIST */
+input[type=text]{
+  width: 60%;
+  padding: 0;
+  margin: 0 0 22px 0;
+  display: block; 
+}
 
+button{
+  background-color: var(--color-button-primary-bg);
+  color: var(--color-text-light);
+  padding: 0.5rem 1rem;
+  width: auto;
+  border-radius: 0.3125rem;
+}
+
+.button-secondary{
+  background-color: var(--color-button-secondary-border);
+  color: var(--c-blue);
+  justify-content: space-around;
+  padding: 10px;
+}
  
+button:hover{
+  opacity: 80%;
 }
 
 
+.userinfo{
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  padding: 20px;
+   display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* responsive grid*/
+}
+
+
+.userinfo ul{ /* fixing button so that icons are aligned horizontally*/ 
+  list-style: none ;
+  margin: 0;
+  padding: 1px;
+  display: flex; /* Aligns icons horizontally */
+  justify-content: space-around;
+  color: var(--c-blue);
+}
+
+/* Search Bar*/ 
+.search{
+  --padding: 14px;
+ width: 100%; 
+ max-width: 800px;
+ display: flex;
+ align-items: center;
+ padding: 7px;
+ margin: 1rem;
+ border-radius: var(--padding);
+ background: #f6f6f6;
+}
+
+.search-input{
+  font-size: var(--font-size-h2);
+  font-family: "Archivo", Arial, Helvetica, sans-serif ;
+  margin-left: var(--padding);
+  color: #333333;
+  outline: none;
+  border: none;
+  background: var(--c-transparent);
+  flex-grow: 1;
+}
+
+
+ }
 @layer utility {
 
 }
