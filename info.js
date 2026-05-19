@@ -38,7 +38,7 @@ openCart.addEventListener("click", () => {
 });
 
 /* CLOSE CART */ 
-closeAccount.addEventListener("click", () => {
+closeCart.addEventListener("click", () => {
     cartDrawer.classList.remove("active");
     cartOverlay.classList.remove("active");
 });
@@ -65,29 +65,39 @@ addCartButtons.forEach(button => {
 
      /* CHECK IF ITEM ALR EXISTS*/
      const existingItem = document.querySelector(
-        '.cart-item[data-name="${name}"]'
+        `.cart-item[data-name="${name}"]`
      );
 
      if(existingItem){
+        existingItem.classList.add("cart-highlight");
+
         setTimeout(() => {
             existingItem.classList.remove("cart-highlight")
         }, 500);
-
+        return;
      }
      
 /* CREATE ITEM */
 const cartItem = document.createElement("div");
 
 cartItem.classList.add("cart-item");
+cartItem.dataset.name = name;
 
 cartItem.innerHTML = `
     <img src="${image}" alt="${name}">
 
     <div class="cart-item-info">
         <p>${name}</p>
-        <p>${price}</p> 
+        <p>${price}</p>     
     </div>
+    
+ <button class="remove-item">
+        x
+        </button> 
+
 `;
+
+
 
 /* REMOVE ITEM*/
 cartItem.querySelector(".remove-item")

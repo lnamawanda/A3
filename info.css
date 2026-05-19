@@ -282,7 +282,7 @@ right: -400px;
 width: min(90%, 350px);
 height: 100vh;
 background: #50593E;
-backdrop-filter: blur(12px);
+backdrop-filter: blur(4px);
 padding: 2rem;
 display: flex;
 flex-direction: column;
@@ -348,7 +348,7 @@ box-shadow: -10px 0 30px rgba(0,0,0,0.3);
 .cart-overlay{
   position: fixed;
   inset: 0;
-  background: #50593E;
+  background:rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(4px);
   opacity: 0;
   visibility: hidden;
@@ -357,18 +357,20 @@ box-shadow: -10px 0 30px rgba(0,0,0,0.3);
 }
 
 .cart-drawer{
-  position: fixed;
-  top: 0;
-  right: -400px;
-  width: min(90%, 350px);
-  height: 100vh;
-  background: var(--c-blue);
-  padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  transition: 0.35s ease;
-  z-index: 999;
+position: fixed;
+top: 0;
+right: -400px;
+width: min(90%, 350px);
+height: 100vh;
+background: #50593E;
+backdrop-filter: blur(4px);
+padding: 2rem;
+display: flex;
+flex-direction: column;
+gap: 2rem;
+transition: 0.35s ease;
+z-index: 999;
+box-shadow: -10px 0 30px rgba(0,0,0,0.3);
 }
 
 .cart-drawer.active{
@@ -630,8 +632,6 @@ button:hover{
 
 
 }
-
-
 
 /*SPECIFIC PRODUCT PAGE */ 
 
