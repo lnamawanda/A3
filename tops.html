@@ -13,6 +13,25 @@
 </head>
 
 <body>
+      <!--Account Overlay Code -->   
+<div class="account-overlay" id="accountOverlay"></div>
+<aside class="account-drawer" id="accountDrawer">
+
+    <div class="drawer-top">
+    <h2>Account</h2>
+    <button class="close-drawer" id="closeAccount">
+        X
+    </button>
+</div>
+
+<div class="drawer-links">
+    <a href="">SIGN IN</a>
+    <a href="">CREATE ACCOUNT</a>
+    <a href="">ORDERS</a>
+    <a href="">WISHLIST</a>
+</div>
+
+</aside>
 
     <header class="topnav">
 <div class="wrapper">
@@ -20,7 +39,11 @@
        <ul class="topnav_links"> <!--unordered list as order of options not significant--> 
         <li><a href="/" class="topnav__option"> <img src="/images/icons/svg icons/hamburger icon .svg" alt="Hamgurger icon to options" class="topnav__option"></a></li>
         <li><a href="/info.html" class="topnav__homelink"> <img src="/images/icons/svg icons/STOP STARING dsktp.svg" alt="Stop Staring homepage" class="topnav__logo"></a></li>
-        <li> <a href="/" class="topnav__account"> <img src="/images/icons/svg icons/account icon .svg" alt="Account" class="topnav__account"></a></li>
+        <li> 
+            <button class="account-btn" id="openAccount">
+            <img src="/images/icons/svg icons/account icon .svg" alt="Account" class="topnav__account"></a>
+            </button> 
+        </li>
        <li> <a href="/" class="topnav__cart"> <img src="/images/icons/svg icons/Shopping cart icon.svg" alt="Cart" class="topnav__cart"></a></li>
     </ul>  
     </nav>
@@ -29,10 +52,7 @@
     </header>
 
     <main id="main">
-        <p>Bridging the gap between everyday looks and high-end fashion, Stop Staring gives customers access to its ever-changing seasonal
-             collection of on-trend and in-demand fashion. Whether you’re shopping for a special-occasion outfit, classical casual wear, 
-             stunning shoes, or complementary bag and accessory, you will not be disappointed with our impressive range on offer.</p>
-    <br>
+       
     <form>
         <div class="search">
             <input class="search-input" type="search" placeholder="Search">
