@@ -1,5 +1,4 @@
 
-
 const openAccount = document.getElementById("openAccount")
 const closeAccount = document.getElementById("closeAccount")
 const accountDrawer = document.getElementById("accountDrawer")
@@ -55,7 +54,9 @@ addCartButtons.forEach(button => {
         const name = button.dataset.name ;
         const price = button.dataset.price ;
         const image = button.dataset.image ; 
-
+        button.textContent = "✓";
+        button.classList.add("added");
+        button.disabled = true;
 
         /* REMOVES EMPTY CART MESSAGE*/
      const emptyCart= document.querySelector(".empty-cart");
@@ -63,6 +64,7 @@ addCartButtons.forEach(button => {
         emptyCart.remove();
      }  
 
+    
      /* CHECK IF ITEM ALR EXISTS*/
      const existingItem = document.querySelector(
         `.cart-item[data-name="${name}"]`
@@ -119,3 +121,21 @@ cartOverlay.classList.add("active");
     });
 
 });
+
+/* HIDDEN FILTER FOR IPHONE VERSION*/ 
+const openFilters = document.getElementById("openFilters");
+const filterDrawer = document.getElementById("filterDrawer");
+const filterOverlay = document.getElementById("filterOverlay");
+
+/*OPENING FILTERS*/
+openFilters.addEventListener("click" , () => {
+    filterDrawer.classList.add("active");
+    filterOverlay.classList.add("active"); 
+});
+
+
+/* CLICKIN OUTSIDE OF PAGE*/
+filterOverlay.addEventListener("click", () => {
+    filterDrawer.classList.remove("active");
+    filterOverlay.classList.remove("active");
+})

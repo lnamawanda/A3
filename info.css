@@ -182,10 +182,12 @@ img, picture, svg {
 }
 
 .topnav img {
-  width: 100%; /* Set consistent icon size */
   height: auto;
   display: block;
-  padding: 10px; /* Increase clickable area */
+}
+
+.account-btn img, .cart-btn img{
+  width: 28px;
 }
 
 .topnav a:hover img {
@@ -195,7 +197,7 @@ img, picture, svg {
 /* LAYOUT INCLUDING FILTER*/
 .shop-layout {
   display: grid;
-  grid-template-columns: 250px 1fr;
+  grid-template-columns: 180px 1fr;
   gap: 2rem;
   align-items: start;
 }
@@ -470,15 +472,82 @@ details label {
   cursor: pointer;
 }
 
+
+
+/* FILTER IPHONE VER*/
+.filter-btn{
+  display: none;
+}
+
+
+/* FILTER DRAWER*/
+.filter-btn{
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background: #1f2433;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+    .filters{
+      position: fixed;
+      top: 0;
+      left: -100%;
+      width: min(90%,320px);
+      height: 100vh;
+      background: #1f2433;
+      padding: 2rem;
+      overflow-y: auto;
+      transition: 0.3s ease;
+      z-index: 1000;
+      max-width: 100%;
+    }
+
+    .filters.active{
+      left: 0;
+    }
+
+    .filter-overlay{
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(4px);
+      opacity: 0;
+      visibility: hidden;
+      transition: 0.3s ease;
+      z-index: 999;
+    }
+
+    .filter-overlay.active{
+      opacity: 1;
+      visibility: visible;
+    }
+    
+    .filter-icon-btn{
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+    }
+
+    .filter-icon-btn img{
+      width: 24px;
+      height: 24px;
+    }
+
 /* PRODUCT DESIGN*/ 
 #product1{
  width: 100%;
+max-width: 400px;
+margin: 0 auto;
 }
  
 #product1 .pro-container {
-  display: grid ;
+  display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* responsive grid*/
-  justify-items: center;
   gap: 2rem;
   width: 100%;
   padding-top: 20px;
@@ -486,8 +555,6 @@ details label {
 
 #product1 .pro{
 width: 100%;
-flex: 1 1 250px; /* grows/shrink/base width*/ 
-max-width: 300px;
 padding: 10px 12px;
 cursor: pointer;
 }
@@ -535,7 +602,7 @@ cursor: pointer;
   margin: 0;
   margin-left: -5%; /* to cover entire screen widht*/ 
   margin-right: -5%; /* to cover entire screen widht*/
-  width: 110%;
+  width: 100%;
   padding: 9px;
   overflow: hidden; /* Clips any content that's too large to fit*/ 
   display: flex;
@@ -622,7 +689,7 @@ button:hover{
 
 @media (max-width: 768px) {
   .filters{
-    max-width: 50%;
+    display: none;
   } /* adjusts size of filters bar for moible device */ 
 
 .pro-container{
@@ -712,20 +779,30 @@ button:hover{
       
     /* MOBILE */
     @media (max-width: 768px) {  
-    #product1 .product-container {    
+    .product-container {    
     grid-template-columns: 1fr;  /* changes grid layout to stacking items in column*/
     }  
     
-    .filters{
-      max-width: 100%;
-      width: 80%;
-      margin-bottom: 2rem;
-    }
-    .shop-layout{
-      grid-template-columns: 1fr;
-    }
+  .topnav__account, .topnav__cart{
+  width: 100px;
+  height: 100px;
 }
 
+.filters{
+  left: -1000;
+}
+
+.filters.active{
+  left: 0;
+}
+
+.account-btn img, .cart-btn img{
+  width: 34px;
+}
+    .shop-layout{
+      width: 100%;
+    }
+}
 
 
  }

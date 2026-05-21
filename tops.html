@@ -67,7 +67,11 @@
             <img src="/images/icons/svg icons/account icon .svg" alt="Account" class="topnav__account"></a>
             </button> 
         </li>
-       <li> <a href="/" class="topnav__cart"> <img src="/images/icons/svg icons/Shopping cart icon.svg" alt="Cart" class="topnav__cart"></a></li>
+       <li> 
+        <button class="cart-btn" id="openCart"> 
+        <img src="/images/icons/svg icons/Shopping cart icon.svg" alt="Cart" class="topnav__cart">
+        </button>
+    </li>
     </ul>  
     </nav>
    
@@ -83,18 +87,21 @@
         </div>
     </form>
     <div class="hero">
+         <button class="filter-icon-btn" id="openFilters">
+            <img src="/images/icons/blue filter.png" alt="Filters">
+        </button>
        <a href="dresses.html"><button> DRESSES</button> </a> 
        <a href="tops.html"><button>TOPS</button></a> 
         <a href="sets.html"><button>SETS</button></a>
        <a href="jackets.html"><button>JACKETS</button></a> 
     </div>
 
+    <div class="filter-overlay" id="filterOverlay"></div>
     <div class="shop-layout">
          <!--Side Filter --> 
 
-  <aside class="filters">
+  <aside class="filters" id="filterDrawer">
 
-  <h3>Filters</h3>
 
   <details open>
     <summary>Size</summary>
@@ -222,19 +229,8 @@
        <a href="/images/icons/svg icons/Plus.svg"></a> 
     </div>
     
-</div>
-
-
-
 </section>   
-    </div>
-       
-
-
-</div>
-
-
-    </form>
+</main>
 
 
 

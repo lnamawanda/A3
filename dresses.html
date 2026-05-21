@@ -68,7 +68,11 @@
             <img src="/images/icons/svg icons/account icon .svg" alt="Account" class="topnav__account"></a>
             </button> 
         </li>
-       <li> <a href="/" class="topnav__cart"> <img src="/images/icons/svg icons/Shopping cart icon.svg" alt="Cart" class="topnav__cart"></a></li>
+       <li> 
+         <button class="cart-btn" id="openCart"> 
+        <img src="/images/icons/svg icons/Shopping cart icon.svg" alt="Cart" class="topnav__cart">
+        </button>
+       </li>
     </ul>  
     </nav>
    
@@ -84,18 +88,20 @@
         </div>
     </form>
     <div class="hero">
+         <button class="filter-icon-btn" id="openFilters">
+            <img src="/images/icons/blue filter.png" alt="Filters">
+        </button>
        <a href="dresses.html"><button> DRESSES</button> </a> 
        <a href="tops.html"><button>TOPS</button></a> 
         <button>SETS</button>
        <a href="jackets.html"><button>JACKETS</button></a> 
     </div>
 
+  <div class="filter-overlay" id="filterOverlay"></div>
     <div class="shop-layout">
          <!--Side Filter --> 
 
-  <aside class="filters">
-
-  <h3>Filters</h3>
+  <aside class="filters" id="filterDrawer">
 
   <details open>
     <summary>Size</summary>
@@ -224,22 +230,12 @@
     </div>
     
 </div>
-
-
-
 </section>   
-    </div>
-       
-
-
-</div>
-
-
-    </form>
+</main
 
 
 
-    <footer class="socialmedia">
+<footer class="socialmedia">
 <ul>
     <li><p>INSTAGRAM</p></li>
     <li><p>TIKTOK</p></li>
