@@ -243,7 +243,7 @@ img, picture, svg {
             rgba(0,0,0,0.35),
             rgba(0,0,0,0.35)
         ),
-        url('/images/dragonfly drawing hero.jpg');
+        url('images/dragonfly drawing hero.jpg');
 
     background-size: cover;
     background-position: center;
@@ -538,6 +538,7 @@ details label {
       height: 24px;
     }
 
+  
 /* PRODUCT DESIGN*/ 
 #product1{
  width: 100%;
