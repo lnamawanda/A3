@@ -67,18 +67,18 @@
 :root{
   --fs-40: calc(40 / 16 * 1rem); 
   --fs-24: calc(24 / 16 * 1rem); 
+  --fs-18: calc( 18 / 16 * 1rem);
   --fs-16: calc( 16 / 16 * 1rem);
   --fs-14: calc( 14 / 16 * 1rem);
   --fs-12: calc( 12 / 16 * 1rem);
-  --fs-8: calc( 8 / 16 * 1rem);
+  --fs-14: calc( 14 / 16 * 1rem);
   --fs-10: calc( 10 / 16 * 1rem);
-  --fs-6: calc( 6 / 16 * 1rem);
 
 
  --font-size-h1: var(--fs-24);
-  --font-size-p: var(--fs-10);
-  --font-size-filter: var(--fs-8);
-  --font-size-footer: var(--fs-6);
+  --font-size-p: var(--fs-16);
+  --font-size-filter: var(--fs-12);
+  --font-size-footer: var(--fs-10);
   --font-size-h2: var(--fs-12);
   
 }
@@ -87,11 +87,11 @@
   :root{ /* redefines the values*/. 
  
   --font-size-h1: var(--fs-40); /* brand name on top of nav bar */ 
-  --font-size-p: var(--fs-14); /* additional text or brand information*/ 
+  --font-size-p: var(--fs-16); /* additional text or brand information*/ 
   --font-size-h3: var(--fs-12); /* button size remains the same on both devices */ 
-  --font-size-filter: var(--fs-14); /* font for options on filter bar */ 
-  --font-size-footer: var(--fs-12); /* font for social media options in footer*/ 
-  --font-size-h2: var(--fs-16); /* used for product info*/ 
+  --font-size-filter: var(--fs-16); /* font for options on filter bar */ 
+  --font-size-footer: var(--fs-10); /* font for social media options in footer*/ 
+  --font-size-h2: var(--fs-18); /* used for product info*/ 
 
     }
   }  
@@ -115,7 +115,6 @@ body {
     background-color: var(--color-main-bg);
     padding-left: 5%;
     padding-right: 5%;
-    padding-block-end: 50vh; /*TEMPORARY adds space 50% of viewport height at bottom of bodytag*/
     
 }
 html, body{
@@ -178,6 +177,12 @@ img, picture, svg {
   justify-content: space-around; /* Evenly spaces items */
   background-color: var(--col);
   position: sticky;
+  align-items: center;
+}
+
+.nav-actions {
+  display: flex;
+  gap: 1rem;
   align-items: center;
 }
 
@@ -538,6 +543,7 @@ details label {
       height: 24px;
     }
 
+ 
   
 /* PRODUCT DESIGN*/ 
 #product1{
@@ -598,6 +604,10 @@ cursor: pointer;
 }
 
 /* SOCIAL MEDIA FOOTER */
+.socialmedia{
+  margin-left: -5%;
+  margin-right: -15%;
+}
 .socialmedia ul{
   list-style-type: none;
   margin: 0;
@@ -781,8 +791,22 @@ button:hover{
        height: 200px;  
        object-fit: contain;} /* scales image to fit while keeping ratio*/
        
+  .product-container{
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+  }     
+
+  @media (min-width: 769){
+    .nav-actions {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+}
+  }
+
      /* MOBILE */
-     @media (max-width: 768px) {  
+@media (max-width: 768px) {  
      .product-container {    
        grid-template-columns: 1fr;
      }  
@@ -804,6 +828,10 @@ button:hover{
        width: 34px;
      }
      
+    .topnav_links {
+        justify-content: space-between;
+        padding: 0 1rem;
+    } 
 .shop-layout{
         width: 100%;
       }
