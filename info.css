@@ -201,10 +201,8 @@ img, picture, svg {
 }
 /* LAYOUT INCLUDING FILTER*/
 .shop-layout {
-  display: grid;
-  grid-template-columns: 180px 1fr;
-  gap: 2rem;
-  align-items: start;
+  display: block;
+  position: relative;
 }
 
 

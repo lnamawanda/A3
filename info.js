@@ -12,23 +12,25 @@ const closeAccount = document.getElementById("closeAccount")
 const accountDrawer = document.getElementById("accountDrawer")
 const accountOverlay = document.getElementById("accountOverlay")
 
-/* OPEN*/
-openAccount.addEventListener("click",()=>{
-    accountDrawer.classList.add("active");
-    accountOverlay.classList.add("active")
-});
+/* ACCOUNT CODE*/
 
-/* CLOSE*/
-closeAccount.addEventListener("click",() => {
-accountDrawer.classList.remove("active");
-accountOverlay.classList.remove("active");
-});
+if (openAccount && closeAccount && accountDrawer && accountOverlay) {
 
-/* CLOSE WHEN OUTSIDE CLICKED*/
-accountOverlay.addEventListener("click", () => {
-    accountDrawer.classList.remove("active");
-    accountOverlay.classList.remove("active");
-});
+    openAccount.addEventListener("click", () => {
+        accountDrawer.classList.add("active");
+        accountOverlay.classList.add("active");
+    });
+
+    closeAccount.addEventListener("click", () => {
+        accountDrawer.classList.remove("active");
+        accountOverlay.classList.remove("active");
+    });
+
+    accountOverlay.addEventListener("click", () => {
+        accountDrawer.classList.remove("active");
+        accountOverlay.classList.remove("active");
+    });
+}
 
 /* CART*/
 const openCart = document.getElementById("openCart");
@@ -38,23 +40,25 @@ const cartOverlay = document.getElementById("cartOverlay");
 const cartItems = document.getElementById("cartItems");
 const addCartButtons = document.querySelectorAll(".add-cart");
 
-/* OPEN CART */ 
-openCart.addEventListener("click", () => {
-    cartDrawer.classList.add("active");
-    cartOverlay.classList.add("active");
-});
+/* CART FUNCTION */ 
+if (openCart && closeCart && cartDrawer && cartOverlay) {
 
-/* CLOSE CART */ 
-closeCart.addEventListener("click", () => {
-    cartDrawer.classList.remove("active");
-    cartOverlay.classList.remove("active");
-});
+    openCart.addEventListener("click", () => {
+        cartDrawer.classList.add("active");
+        cartOverlay.classList.add("active");
+    });
 
-/* CLOSE OUTSIDE */ 
-cartOverlay.addEventListener("click", () => {
-    cartDrawer.classList.remove("active");
-    cartOverlay.classList.remove("active");
-});
+    closeCart.addEventListener("click", () => {
+        cartDrawer.classList.remove("active");
+        cartOverlay.classList.remove("active");
+    });
+
+    cartOverlay.addEventListener("click", () => {
+        cartDrawer.classList.remove("active");
+        cartOverlay.classList.remove("active");
+    });
+
+}
 
 /* ADD ITEMS */
 addCartButtons.forEach(button => {
@@ -91,17 +95,19 @@ addCartButtons.forEach(button => {
    
 
 /*OPENING FILTERS*/
-openFilters.addEventListener("click" , () => {
-    filterDrawer.classList.add("active");
-    filterOverlay.classList.add("active"); 
-});
+if (openFilters && filterDrawer && filterOverlay) {
 
+    openFilters.addEventListener("click", () => {
+        filterDrawer.classList.add("active");
+        filterOverlay.classList.add("active");
+    });
 
-/* CLICKIN OUTSIDE OF PAGE*/
-filterOverlay.addEventListener("click", () => {
-    filterDrawer.classList.remove("active");
-    filterOverlay.classList.remove("active");
-});
+    filterOverlay.addEventListener("click", () => {
+        filterDrawer.classList.remove("active");
+        filterOverlay.classList.remove("active");
+    });
+
+}
 
 /* RENDERING CART*/
 function renderCart(){
