@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Page</title>
+   <link rel="icon" type="image/x-icon" href="favicon /favicon.ico">
+  <link rel="stylesheet" href="info.css">
+</head>
+
+<body>
+<header class="checkout-header">
+  <h1>Checkout</h1>
+  <a href="shopnow.html">← Back to shopping</a>
+</header>
+
+<main class="checkout-layout">
+
+  <!-- LEFT: CUSTOMER INFO FORM -->
+  <section class="checkout-form">
+
+    <h2>Contact</h2>
+    <input type="email" placeholder="Email">
+
+    <h2>Delivery</h2>
+    <input type="text" placeholder="Full name">
+    <input type="text" placeholder="Address">
+    <input type="text" placeholder="Apartment, suite (optional)">
+    <input type="text" placeholder="City">
+    <input type="text" placeholder="Postcode">
+    <input type="text" placeholder="Phone">
+
+    <h2>Shipping Method</h2>
+    <label><input type="radio" name="ship"> Standard (3–5 days)</label>
+    <label><input type="radio" name="ship"> Express (1–2 days)</label>
+
+    <h2>Payment</h2>
+    <label><input type="radio" name="pay"> Card</label>
+    <label><input type="radio" name="pay"> PayPal</label>
+
+    <button class="pay-btn">Pay Now</button>
+
+  </section>
+
+  <!-- RIGHT: CHECKOUT SUMMARY -->
+    <aside class="checkout-summary">
+
+  <h2>Order Summary</h2>
+
+  <div id="checkoutItems"></div>
+
+  <div class="summary-totals">
+    <p id="subtotal">Subtotal: $0.00</p>
+    <p>Shipping: $5.00</p>
+    <h3 id="total">Total: $0.00</h3>
+  </div>
+
+</aside>
+
+
+</main>
+
+</body>
+</html>

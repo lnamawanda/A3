@@ -170,3 +170,46 @@ document.addEventListener("DOMContentLoaded", () => {
     syncButtonsWithCart();
     renderCart();
 });
+
+/* CHECKOUT PAGE*/
+
+
+const checkoutItems = document.getElementById("checkoutItems");
+const subtotalEl = document.getElementById("subtotal");
+const totalEl = document.getElementById("total");
+
+function renderCheckout(){
+    if (!checkoutItems) return; //only running on checkout page
+    
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    checkoutItems.innerHTML = "";
+    let subtotal = 0;
+
+    cart.forEach(item => {
+        const price = parseFloat(item.price); 
+        
+        subtotal += price* item.quantity;
+
+        const div = document.createElement("div");
+        div.classList.add("summary-items");
+
+        div.innerHTML = `
+            <img src="${item.image}">
+            <div>
+                <p>${item.name}</p>
+                <span>$${price.toFixed(2)} x ${item.quantity}</span>
+            </div>
+        `;
+
+            checkoutItems.appendChild(div)
+    });
+    
+    const shipping = cart.lenght > 0 ? 5 : 0; 
+    const total = subtotal + shipping; 
+
+    if (subtotalEl) subtotalEl.textContent = `Subtotal: $${subtotal.toFixed(2)}`;
+    if (totalEl) totalEl.textContent = `Total: $${total.toFixed(2)}`;
+}
+
+document.addEventListener("DOMContentLoaded", renderCheckout);

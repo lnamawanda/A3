@@ -566,10 +566,16 @@ cursor: pointer;
 
 #product1 .pro img {
   width: 100%;
-  height: 300px;        
+  height: 180px;        
   object-fit: contain;  /* shows entire image */
   background-color: var(--color-main-bg);
   border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+#product1 .description {
+font-size: 0.98rem;
+font-weight: 200;
 }
 
 /* SHOP NOW BUTTON*/
@@ -585,7 +591,7 @@ cursor: pointer;
   justify-content:center;
   gap: clamp(0.5rem, 2vw, 2rem); /* responsive spacing*/ 
   padding: 0 clamp(0.625rem, 4vw, 3.75rem);
-
+  margin-bottom: 2rem;
 }
 
 /* PLUS BUTTON */
@@ -793,7 +799,97 @@ button:hover{
     display:grid;
     grid-template-columns: repeat(3,1fr);
     gap: 20px;
-  }     
+  }   
+  
+  /* CHECKOUT PAGE LAYOUT */
+.checkout-layout{
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 3rem auto;
+  padding: 1rem;
+}
+
+/* HEADER */
+.checkout-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+}
+
+/* FORM */
+.checkout-form input{
+  width: 100%;
+  padding: 12px;
+  margin: 0.5rem 0 1rem;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 8px;
+  background: transparent;
+  color: white;
+}
+
+.checkout-form h2{
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* BUTTON */
+.pay-btn{
+  width: 100%;
+  padding: 1rem;
+  margin-top: 2rem;
+  background: var(--c-blue);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+/* SUMMARY PANEL */
+.checkout-summary{
+  background: rgba(255,255,255,0.05);
+  padding: 1.5rem;
+  border-radius: 12px;
+  height: fit-content;
+  position: sticky;
+  top: 2rem;
+}
+
+/* ITEM ROW */
+.summary-item{
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+  align-items: center;
+}
+
+.summary-item img{
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* TOTALS */
+.summary-totals{
+  border-top: 1px solid rgba(255,255,255,0.2);
+  margin-top: 1rem;
+  padding-top: 1rem;
+}
+
+/* MOBILE */
+@media (max-width: 768px){
+  .checkout-layout{
+    grid-template-columns: 1fr;
+  }
+
+  .checkout-summary{
+    position: static;
+  }
+}
 
   @media (min-width: 769){
     .nav-actions {
