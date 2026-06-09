@@ -973,6 +973,11 @@ button:hover{
   color: white;
 }
 
+.back-shop {
+  text-decoration: none;
+  color: white;
+}
+
 /* button return to home*/
 .success-btn{
   margin-top: 10px;
