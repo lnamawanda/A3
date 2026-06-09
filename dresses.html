@@ -13,6 +13,7 @@
 </head>
 
 <body>
+<img src="cornerlogoimg.png" alt="treelogo" class="corner-image">    
       <!--Account Overlay Code -->   
 <div class="account-overlay" id="accountOverlay"></div>
 <aside class="account-drawer" id="accountDrawer">
@@ -50,7 +51,7 @@
  
  <!--Cart Footer Overlay Code --> 
  <div class="cart-footer">
-    <button class="checkout-btn">
+    <button class="checkout-btn" id="checkoutBtn">
         CHECKOUT
     </button>
  </div>
@@ -61,7 +62,7 @@
 <div class="wrapper">
     <nav>
        <ul class="topnav_links"> <!--unordered list as order of options not significant--> 
-        <li><a href="/" class="topnav__option"> <img src="images/icons/svg icons/hamburger icon .svg" alt="Hamgurger icon to options" class="topnav__option"></a></li>
+         <li><a href="support.html" class="topnav__option"> <img src="images/icons/svg icons/Help circle.svg" alt="help icon" class="topnav__option"></a></li>
         <li><a href="info.html" class="topnav__homelink"> <img src="images/icons/svg icons/STOP STARING dsktp.svg" alt="Stop Staring homepage" class="topnav__logo"></a></li>
        <li class="nav-actions"> 
             <button class="account-btn" id="openAccount">
@@ -90,10 +91,10 @@
          <button class="filter-icon-btn" id="openFilters">
             <img src="images/icons/blue filter.png" alt="Filters">
         </button>
-       <a href="dresses.html"><button> DRESSES</button> </a> 
-       <a href="tops.html"><button>TOPS</button></a> 
-        <button>SETS</button>
-       <a href="jackets.html"><button>JACKETS</button></a> 
+       <a href="dresses.html" class="category active"><button> DRESSES</button> </a> 
+       <a href="tops.html" class="category"><button>TOPS</button></a> 
+       <a href="sets.html" class="category"><button>SETS</button> </a> 
+       <a href="jackets.html" class="category"><button>JACKETS</button></a> 
     </div>
 
   <div class="filter-overlay" id="filterOverlay"></div>
@@ -199,6 +200,34 @@
        <a href="images/icons/svg icons/Plus.svg"></a> 
     </div>
 
+    <div class="pro">
+        <img src="images/dresses/yellow halter dress .png" alt="Yellow halter mini dress">
+       <div class="description">
+        <h2>Windsor Yellow Halter  </h2>
+        <br>
+        <div class="plusbutton">
+            <h2>$29.99</h2> 
+            <button type="button">+</button>
+        </div>
+        
+       </div>
+       <a href="/images/icons/svg icons/Plus.svg"></a> 
+    </div>
+
+    <div class="pro">
+        <img src="images/dresses/swan dress.png" alt="BLack mini dress with white swan">
+       <div class="description">
+        <h2>McGillivary Swan Dress  </h2>
+        <br>
+        <div class="plusbutton">
+            <h2>$139.99</h2> 
+            <button type="button">+</button>
+        </div>
+        
+       </div>
+       <a href="/images/icons/svg icons/Plus.svg"></a> 
+    </div>
+
      <div class="pro">
         <img src="images/dresses/satin maxi dress.png" alt="White flower print satin maxi dress">
        <div class="description">
@@ -221,7 +250,12 @@
         <br>
         <div class="plusbutton">
             <h2>$86.99</h2> 
-            <button type="button">+</button>
+           <button 
+      class="add-to-cart add-cart"
+      data-name="Versace Midi Dress"
+      data-price="85.99"
+      data-image="images/dresses/Versace floral dress.png"
+      >+</button>
         </div>
         
        </div>

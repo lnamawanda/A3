@@ -165,6 +165,26 @@ img, picture, svg {
 }
  @layer component {
 
+body {
+  opacity: 1;
+  transition: opacity 0.4s ease;
+}
+
+/* corner image*/
+.corner-image {
+  position: fixed;
+  top: 0;
+  right: 0;
+
+  width: 250px;
+  height: auto;
+
+  opacity: 0.15;
+
+  pointer-events: none;
+  z-index: -1;
+}
+
  /* NAV BAR */ 
 
   .topnav ul {
@@ -199,6 +219,8 @@ img, picture, svg {
   opacity: 0.6; /* Visual feedback on hover */
   transition: 0.3s;
 }
+
+
 /* LAYOUT INCLUDING FILTER*/
 .shop-layout {
   display: block;
@@ -476,13 +498,6 @@ details label {
 }
 
 
-
-/* FILTER IPHONE VER*/
-.filter-btn{
-  display: none;
-}
-
-
 /* FILTER DRAWER*/
 .filter-btn{
     display: block;
@@ -532,8 +547,9 @@ details label {
       background: transparent;
       border: none;
       cursor: pointer;
-      display: flex;
-      justify-content: center;
+      display: block;
+      position: relative;
+      z-index: 1000;
     }
 
     .filter-icon-btn img{
@@ -575,7 +591,7 @@ cursor: pointer;
 
 #product1 .description {
 font-size: 0.98rem;
-font-weight: 200;
+font-weight: 100;
 }
 
 /* SHOP NOW BUTTON*/
@@ -702,17 +718,56 @@ button:hover{
   
 }
 
-@media (max-width: 768px) {
-   .filters{
-     display: none;
-   } /* adjusts size of filters bar for moible device */ 
-
-   #product1 .pro-container{
-     display: grid;
-     place-items: center; /* centers products when in mobile device display*/ 
-   }
 
 
+ /* categories*/
+
+ .category {
+  opacity: 0.5;
+  transition: opacity 0.2s ease;
+ }
+
+ .category.active {
+  opacity: 1;
+ }
+
+ /* support page */
+
+ .support-header {
+  text-align: center;
+  padding: 4rem 1 rem 2rem;
+ }
+
+ .support-header h1{
+  font-size: 2.5rem;
+ }
+
+ 
+
+ .support-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+ }
+
+ .support-section {
+  margin-bottom: 3rem;
+ }
+
+ .support-section h2 {
+  margin-bottom: 1rem;
+ }
+
+ .support-section p, .support-section li {
+  line-height: 1.6;
+  opacity: 0.85;
+ }
+
+ .support-section ul {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  list-style-type: disc;
  }
 
 /*SPECIFIC PRODUCT PAGE */ 
@@ -721,7 +776,7 @@ button:hover{
 .product-container {  
   display: grid; 
   grid-template-columns: 1fr 1fr;  
-  gap: 3rem; 
+  gap: var(--fs-40); 
   max-width: 1200px;    
   margin: auto;  
   background: var(--color-main-bg);  
@@ -732,7 +787,9 @@ button:hover{
   .product-gallery {  
     display: flex;  
     flex-direction: column;  
-    gap: 1rem;}
+    gap: 1rem;
+    margin-right: 4rem;
+  }
     
     .main-image {  
       width: 100%;  
@@ -795,11 +852,7 @@ button:hover{
        height: 200px;  
        object-fit: contain;} /* scales image to fit while keeping ratio*/
        
-  .product-container{
-    display:grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 20px;
-  }   
+ 
   
   /* CHECKOUT PAGE LAYOUT */
 .checkout-layout{
@@ -880,7 +933,157 @@ button:hover{
   padding-top: 1rem;
 }
 
-/* MOBILE */
+/* CHECKOUT */
+.purchase-transition{
+  position: fixed;
+  inset: 0;
+  background: var(--color-main-bg);
+
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s ease;
+  z-index: 9999;
+}
+
+.purchase-transition.active{
+  opacity: 1;
+  visibility: visible;
+}
+
+.success-content{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+/* circle and tick */
+.circle-wrapper{
+  position: relative;
+  width: 100px;
+  height: 100px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.circle{
+  width: 80px;
+  height: 80px;
+  border: 4px solid #1f2433;
+  border-radius: 50%;
+  position: absolute;
+
+  transform: scale(0);
+  animation: popCircle 0.4s ease forwards;
+}
+
+@keyframes popCircle{
+  to{
+  transform: scale(1);
+}
+}
+
+.tick{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 42px;
+  color: #1f2433;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.5);
+  animation: showTick 0.4s ease forwards;
+  animation-delay: 0.4s;
+}
+
+@keyframes showTick{
+  to{
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* confirmation text */
+.success-title{
+  font-size: 1.6rem;
+  margin: 0;
+  color: white;
+  margin-top: 10px;
+}
+
+.success-text{
+  font-size: 0.95rem;
+  max-width: 320px;
+  opacity: 0.7;
+  color: white;
+}
+
+/* button return to home*/
+.success-btn{
+  margin-top: 10px;
+  padding: 10px 18px;
+  border: none;
+  background:#4D5673;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* MOBILE */  
+
+@media (max-width: 768px) {
+  .filters {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: min(90%, 320px);
+    height: 100vh;
+    background: #1f2433;
+    padding: 2rem;
+    overflow-y: auto;
+    transition: 0.3s ease;
+    z-index: 1000;
+    display: block;
+  }
+
+  .filters.active {
+    left: 0;
+  }  
+
+  .filter-icon-btn {
+    display: flex;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    z-index: 1000;
+  }
+
+  .filter-icon-btn img {
+    width: 22px;
+    height: 22px;
+    display: block;
+  }
+
+   #product1 .pro-container{
+     display: grid;
+     place-items: center; /* centers products when in mobile device display*/ 
+   }
+
+
+ }
 @media (max-width: 768px){
   .checkout-layout{
     grid-template-columns: 1fr;
@@ -910,22 +1113,32 @@ button:hover{
        height: 100px;
      }
 
-     .filters{
-       left: -1000px;
-     }
-
-     .filters.active{
-       left: 0;
-     }
-
+  
      .account-btn img, .cart-btn img{
-       width: 34px;
+       width: 44px;
      }
      
     .topnav_links {
         justify-content: space-between;
         padding: 0 1rem;
+        width: 100%;
     } 
+
+    .topnav ul {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.75rem 1rem;
+    }
+    .account-btn img, .cart-btn img {
+      width: 38px;
+      height: auto;
+    }
+    .topnav_logo {
+      width: 140px;
+      height: auto;
+    }
+
 .shop-layout{
         width: 100%;
       }

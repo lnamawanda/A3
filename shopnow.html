@@ -6,13 +6,14 @@
     <title>Stop Staring</title>
     <link rel="icon" type="image/x-icon" href="/favicon /favicon.ico">
     <link rel="stylesheet" href="info.css">
-    <script src="/info.js" defer></script>
+    <script src="info.js" defer></script>
 
     <!--Favicon Code -->
     <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
 </head>
 
 <body>
+<img src="cornerlogoimg.png" alt="treelogo" class="corner-image">    
       <!--Account Overlay Code -->   
 <div class="account-overlay" id="accountOverlay"></div>
 <aside class="account-drawer" id="accountDrawer">
@@ -50,7 +51,7 @@
  
  <!--Cart Footer Overlay Code --> 
  <div class="cart-footer">
-    <button class="checkout-btn">
+    <button class="checkout-btn"  >
         CHECKOUT
     </button>
  </div>
@@ -61,7 +62,7 @@
 <div class="wrapper">
     <nav>
        <ul class="topnav_links"> <!--unordered list as order of options not significant--> 
-        <li><a href="/" class="topnav__option"> <img src="images/icons/svg icons/hamburger icon .svg" alt="Hamgurger icon to options" class="topnav__option"></a></li>
+         <li><a href="support.html" class="topnav__option"> <img src="images/icons/svg icons/Help circle.svg" alt="help icon" class="topnav__option"></a></li>
         <li><a href="info.html" class="topnav__homelink"> <img src="images/icons/svg icons/STOP STARING dsktp.svg" alt="Stop Staring homepage" class="topnav__logo"></a></li>
         <li class="nav-actions"> 
             <button class="account-btn" id="openAccount">
@@ -89,10 +90,10 @@
         <button class="filter-icon-btn" id="openFilters">
             <img src="images/icons/blue filter.png" alt="Filters">
         </button>
-       <a href="dresses.html"><button> DRESSES</button> </a> 
-       <a href="tops.html"><button>TOPS</button></a> 
-       <a href="sets.html"><button>SETS</button></a> 
-        <a href="jackets.html"><button>JACKETS</button></a>
+       <a href="dresses.html" class="category"><button> DRESSES</button> </a> 
+       <a href="tops.html" class="category"><button>TOPS</button></a> 
+       <a href="sets.html" class="category"><button>SETS</button></a> 
+        <a href="jackets.html" class="category"><button>JACKETS</button></a>
     </div>
 
 
@@ -152,20 +153,27 @@
         <br>
         <div class="plusbutton">
             <h2>$19.99</h2> 
-            <button type="button">+</button>
+            <button class="add-cart"
+            data-name="Fairycity Top"
+            data-price="19.99"
+            data-image="images/tops/yellow floral tank top.png"
+            >+</button>
         </div>
-        
        </div>
        <a href="images/icons/svg icons/Plus.svg"></a> 
     </div>
     <div class="pro">
-        <img src="images/dresses/Versace floral dress.png" alt="Versace Pink and White Floral Dress">
+        <a href="versacedress.html"> <img src="images/dresses/Versace floral dress.png" alt="Versace Pink and White Floral Dress"> </a>  
        <div class="description">
         <h2>Versace Floral Midi Dress </h2>
         <br>
         <div class="plusbutton">
             <h2>$85.99</h2> 
-            <button type="button">+</button>
+            <button class="add-cart"
+            data-name="Versace Midi Dress"
+            data-price="85.99"
+            data-image="images/dresses/Versace floral dress.png"
+            >+</button>
         </div>
         
        </div>
@@ -222,6 +230,33 @@
         
        </div>
        <a href="images/icons/svg icons/Plus.svg"></a> 
+    </div>
+      <div class="pro">
+        <img src="images/jackets/polo jacket.png" alt="Plaid Ralf Lauren Jacket">
+       <div class="description">
+        <h2>Ralf Lauren Jacket </h2>
+        <br>
+        <div class="plusbutton">
+            <h2>$134.99</h2> 
+            <button type="button">+</button>
+        </div>
+        
+       </div>
+       <a href="images/icons/svg icons/Plus.svg"></a> 
+    </div>
+
+     <div class="pro">
+        <img src="images/dresses/swan dress.png" alt="BLack mini dress with white swan">
+       <div class="description">
+        <h2>McGillivary Swan Dress  </h2>
+        <br>
+        <div class="plusbutton">
+            <h2>$139.99</h2> 
+            <button type="button">+</button>
+        </div>
+        
+       </div>
+       <a href="/images/icons/svg icons/Plus.svg"></a> 
     </div>
 </div>
 

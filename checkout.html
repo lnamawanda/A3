@@ -6,17 +6,18 @@
   <title>Product Page</title>
    <link rel="icon" type="image/x-icon" href="favicon /favicon.ico">
   <link rel="stylesheet" href="info.css">
+  <script src="info.js" defer></script>
 </head>
 
 <body>
+ <img src="cornerlogoimg.png" alt="treelogo" class="corner-image"> 
 <header class="checkout-header">
-  <h1>Checkout</h1>
   <a href="shopnow.html">← Back to shopping</a>
 </header>
 
 <main class="checkout-layout">
 
-  <!-- LEFT: CUSTOMER INFO FORM -->
+  <!-- LEFT: FORM -->
   <section class="checkout-form">
 
     <h2>Contact</h2>
@@ -38,11 +39,11 @@
     <label><input type="radio" name="pay"> Card</label>
     <label><input type="radio" name="pay"> PayPal</label>
 
-    <button class="pay-btn">Pay Now</button>
+    <button class="pay-btn" id="payBtn">Checkout</button>
 
   </section>
 
-  <!-- RIGHT: CHECKOUT SUMMARY -->
+  <!-- RIGHT: SUMMARY -->
     <aside class="checkout-summary">
 
   <h2>Order Summary</h2>
@@ -57,8 +58,28 @@
 
 </aside>
 
-
 </main>
+
+<div class="purchase-transition" id="purchaseTransition">
+
+  <div class="success-content">
+  
+    <div class="cicle-wrapper">
+    <div class="circle"></div>
+    <div class="tick">✓</div>
+  </div>
+
+<h2 class="success-title">Order Confirmed</h2>
+<p class="success-text"> Thank you for your purchse! You will receive a confirmation email shortly. 
+</p>
+
+<button class="success-btn" id="continueShopping">
+  Continue Shopping
+</button>
+
+
+</div>
+</div>
 
 </body>
 </html>
