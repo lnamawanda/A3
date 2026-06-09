@@ -584,7 +584,7 @@ cursor: pointer;
   width: 100%;
   height: 180px;        
   object-fit: contain;  /* shows entire image */
-  background-color: var(--color-main-bg);
+  background-color: transparent;
   border-radius: 12px;
   margin-bottom: 20px;
 }
