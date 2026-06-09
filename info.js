@@ -290,7 +290,7 @@ document.addEventListener("DOMContentLoaded", () => {
         btn.addEventListener("click", () => {
             localStorage.removeItem("cart");
             cart = [];
-            window.location.href = "info.html";
+            window.location.href = "index.html";
         })
     }
 })

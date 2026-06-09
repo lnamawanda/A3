@@ -1036,8 +1036,6 @@ button:hover{
    }
 
 
- }
-@media (max-width: 768px){
   .checkout-layout{
     grid-template-columns: 1fr;
   }
@@ -1047,16 +1045,7 @@ button:hover{
   }
 }
 
-  @media (min-width: 769){
-    .nav-actions {
-  display: flex;
-  gap: 3rem;
-  align-items: center;
-}
-  }
-
-     /* MOBILE */
-@media (max-width: 768px) {  
+   
      .product-container {    
        grid-template-columns: 1fr;
      }  
@@ -1065,17 +1054,26 @@ button:hover{
        width: 100px;
        height: 100px;
      }
-
-  
-     .account-btn img, .cart-btn img{
-       width: 44px;
-     }
      
     .topnav_links {
+      display: flex;
         justify-content: space-between;
-        padding: 0 1rem;
+        align-items: center;
+        padding: 0.75rem 1rem;
         width: 100%;
+        list-style: none;
     } 
+
+     .nav-actions {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    }
+
+    .account-btn img, .cart-btn img{
+       width: 32px;
+       height: auto;
+     }
 
     .topnav ul {
       display: flex;
@@ -1083,20 +1081,23 @@ button:hover{
       align-items: center;
       padding: 0.75rem 1rem;
     }
-    .account-btn img, .cart-btn img {
-      width: 38px;
+   
+    .topnav_logo {
+      width: 120px;
       height: auto;
     }
-    .topnav_logo {
-      width: 140px;
+
+    .topnav_option {
+      width: 24px;
       height: auto;
+      padding-right: 5rem;
     }
 
 .shop-layout{
         width: 100%;
       }
     }
-  }
+
 
   @layer utility {
   }
